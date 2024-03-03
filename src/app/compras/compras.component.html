@@ -1,0 +1,29 @@
+<p-table [value]="instanciaProductos" responsiveLayout="scroll">
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      Productos
+      <p-button icon="pi pi-refresh"></p-button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Fecha vencimiento</th>
+      <th scope="col">Fecha compra</th>
+      <th scope="col">Ubicación</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.producto.nombre }}</td>
+      <td>{{ product.producto.marca }}</td>
+      <td>{{ product.cantidad }}
+      </td>
+      <td>{{ product.fechaDeVencimiento }}</td>
+      <td>{{ product.fechaDeCompra }}</td>
+      <td>{{ product.ubicacion.nombre }}</td>
+    </tr>
+  </ng-template>
+</p-table>
